@@ -1,5 +1,6 @@
 # 📍 Dataset-Pruning-FreqCore
 Official PyTorch implementation of paper (SIGKDD 2026) 🤩
+
 "FreqCore: A Frequency Domain Perspective on Coreset Selection" 
 >[Jiazhe Li](https://github.com/JZheL), [Chenhe Hao](https://github.com/xrosssaber12306), [Weiying Xie](https://scholar.google.com/citations?user=y0ha5lMAAAAJ&hl=zh-CN), [Jitao Ma](https://orcid.org/0009-0009-7782-8184), [Daixun Li](https://scholar.google.cz/citations?user=gaiP4-IAAAAJ&hl=zh-CN&oi=ao), [Xin Zhang](https://scholar.google.com/citations?user=quAaEpgAAAAJ&hl=zh-CN), [Leyuan Fang](https://scholar.google.cz/citations?user=Gfa4nasAAAAJ&hl=zh-CN&oi=ao)<br>
 >XDU and HNU
@@ -35,9 +36,8 @@ Explanation:
 
 Note 1: `--start_epoch X` means resuming training from the latest epoch. Thus, you need to replace `X` with the epoch index of the saved latest checkpoint path.
 
-Note 1: `--manualSeed X` means that the seed for the resumed training and the training before the interruption must be the same. Thus, you need to replace `X` with the seed from the training before the interruption.
+Note 2: `--manualSeed X` means that the seed for the resumed training and the training before the interruption must be the same. Thus, you need to replace `X` with the seed from the training before the interruption.
 
 Example：
-
 Assuming training was interrupted before epoch 71 was completed, and the results are saved in `./result`, currently containing `checkpoint_epoch_70.pth` and `log_seed_1071.txt`, the command to resume training is:
 * `python examples/cifar_r18.py --use_freqcore --dataset_name cifar10 --save_path ./result --ratio 0.7 --resume result/checkpoint_epoch_70.pth --start_epoch 70 --manualSeed 1071`
